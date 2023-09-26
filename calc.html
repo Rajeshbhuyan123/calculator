@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="inp">
+        <div class="btn">
+        <div class="btn1">
+            <input type="submit"  value="1">
+            <input type="submit"  value="2">
+            <input type="submit"  value="3">
+            <input type="submit"  value="4">
+            <input type="submit"  value="5">
+        </div>
+        <div class="btn2">
+            <input type="submit"  value="6">
+            <input type="submit"  value="7">
+            <input type="submit"  value="8">
+            <input type="submit"  value="9">
+            <input type="submit"  value="0">
+        </div>
+        <div class="btn3">
+            <input type="submit"  value="+">
+            <input type="submit"  value="-">
+            <input type="submit"  value="*">
+            <input type="submit"  value="/">
+            <input type="submit"  value="%">
+        </div>
+    </div>
+        <input type="submit" class="solve" value="=" onclick="solve()">
+        <input type="submit" class="clear" value="clear" onclick="remove()">
+    </div>
+</body>
+
+<script>
+    let input = document.querySelector(".inp")
+    let btn = document.querySelector(".btn")
+
+    btn.addEventListener("click",(e) =>{
+        input.value +=e.target.value
+    })
+
+    const solve = () =>{
+        let res = eval(input.value)
+        input.value = res
+    }
+
+    const remove = () =>{
+        input.value = ""
+    }
+</script>
+</html>
